@@ -1,2 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
-:root{font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;color:#26332a;background:#fbf8f2;font-synthesis:none;--green:#36543d;--sage:#e8eee4;--muted:#7a837b;--line:#e9e2d8}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}.header{height:82px;padding:0 max(5vw,calc((100vw - 1100px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px;background:#fffdf9;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:3}.brand .logo{display:flex;align-items:center;gap:8px;font-size:28px;font-weight:700;color:var(--green)}.brand small{display:block;font-size:11px;color:#84715a;margin-top:-3px}.header nav{display:flex;gap:8px}.header nav button{border:0;background:transparent;color:#465249;padding:10px}.header nav button:hover{color:var(--green);background:var(--sage);border-radius:10px}.cart,.primary{border:0;background:var(--green);color:white;border-radius:12px;padding:11px 15px;display:inline-flex;align-items:center;justify-content:center;gap:8px}.hero{max-width:1100px;margin:28px auto 34px;padding:30px 36px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;background:linear-gradient(125deg,#edf1e8,#f7e8d9);border-radius:28px;overflow:hidden}.eyebrow{color:var(--green);font-weight:600;font-size:13px}.hero h1{font-size:clamp(32px,4vw,48px);line-height:1.4;margin:8px 0}.hero p{color:#657064;line-height:1.9;max-width:530px}.hero-tags{display:flex;gap:8px;flex-wrap:wrap}.hero-tags span{background:#fffaf3;border:1px solid #e7ddcf;color:#52614f;padding:7px 12px;border-radius:999px;font-size:12px}.hero-art{height:190px;border-radius:24px;background:#dfe8d8;display:flex;justify-content:center;align-items:center;gap:10px;font-size:68px;position:relative}.hero-art span{font-size:42px;transform:translateY(-25px)}main{max-width:1100px;margin:auto;padding:0 0 38px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:16px}.section-head h2,h2{font-size:24px}.search{display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--line);border-radius:12px;padding:0 13px;width:min(360px,100%)}.search input{border:0;outline:0;width:100%;padding:12px 0;background:transparent}.categories{display:flex;gap:8px;overflow:auto;padding:5px 0 17px}.categories button{white-space:nowrap;background:white;border:1px solid var(--line);border-radius:999px;padding:9px 14px;color:#566156}.categories button.active{background:var(--green);color:white;border-color:var(--green)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.product{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .15s,box-shadow .15s}.product:hover{transform:translateY(-3px);box-shadow:0 10px 28px #293c2410}.product-art{height:150px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#f0e4d5,#e8eee4);font-size:58px}.product-info{padding:15px}.cat-label{font-size:11px;color:#778474}.product h3{margin:5px 0;font-size:18px}.product-info p{margin:0 0 14px;color:var(--muted);font-size:13px}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}.product-bottom strong{color:var(--green)}.product-bottom button,.secondary{border:0;border-radius:10px;padding:9px 11px;background:var(--sage);color:var(--green)}.panel{background:white;border:1px solid var(--line);border-radius:20px;padding:24px;margin:24px 0}.panel h2{display:flex;align-items:center;gap:9px;margin-top:0}.form{display:grid;gap:13px;align-content:start}.form label{display:grid;gap:6px;font-size:13px;color:#5e695f}.form input,.form select,.form textarea{width:100%;border:1px solid #dedfd6;border-radius:10px;padding:11px;background:#fffefa;outline-color:var(--green)}.form textarea{min-height:85px;resize:vertical}.auth{display:grid;grid-template-columns:1fr 1fr;gap:25px}.auth h3{display:flex;align-items:center;gap:8px;margin:0 0 4px}.notice{margin:18px 0;padding:13px 16px;border-radius:12px;background:#edf1e8;color:var(--green);display:flex;justify-content:space-between;gap:12px}.notice button{border:0;background:transparent;color:inherit;text-decoration:underline}.cart-row,.order-row{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:14px 0;border-bottom:1px solid var(--line)}.cart-row button{border:0;background:#f8e9e4;color:#8b4338;border-radius:8px;padding:7px 10px}.order-row small{display:block;color:var(--muted);margin-top:4px}.status{background:#f4ead7;border-radius:999px;padding:6px 10px;font-size:12px}.trust{margin-top:28px;padding:18px 20px;border-radius:16px;background:#edf1e8;display:flex;align-items:flex-start;gap:13px;color:var(--green)}.trust p{margin:4px 0 0;line-height:1.8;font-size:13px;color:#627062}footer{border-top:1px solid var(--line);padding:24px max(5vw,calc((100vw - 1100px)/2));display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}footer span{margin-right:auto}footer button{display:flex;align-items:center;gap:5px;border:0;background:transparent;color:var(--green)}@media(max-width:1150px){main{padding-left:5vw;padding-right:5vw}.hero{margin-left:5vw;margin-right:5vw}}@media(max-width:700px){.header{height:auto;min-height:75px;flex-wrap:wrap;padding:12px 5vw;gap:8px}.header nav{order:3;width:100%;justify-content:space-around}.header nav button{padding:8px 6px;font-size:13px}.brand .logo{font-size:25px}.cart{padding:9px 11px}.hero{grid-template-columns:1fr;margin-top:18px;padding:23px}.hero-art{height:110px;font-size:44px}.hero-art span{font-size:30px}.section-head{align-items:stretch;flex-direction:column;gap:0}.section-head h2{margin-bottom:12px}.search{width:100%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-art{height:115px;font-size:45px}.product-info{padding:11px}.product h3{font-size:16px}.product-bottom{align-items:stretch;flex-direction:column}.product-bottom button{width:100%}.auth{grid-template-columns:1fr}.panel{padding:17px}.order-row{flex-wrap:wrap}footer{flex-wrap:wrap}footer span{margin-right:0;width:100%}}
+name: Deploy Sun3 Marketplace
+
+on:
+
+  push:
+
+    branches: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+
+  contents: read
+
+  pages: write
+
+  id-token: write
+
+concurrency:
+
+  group: pages
+
+  cancel-in-progress: false
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+
+        uses: actions/setup-node@v4
+
+        with:
+
+          node-version: 20
+
+      - name: Install dependencies
+
+        run: npm install
+
+      - name: Build project
+
+        run: npm run build -- --base=/Sun3-marketplace/
+
+      - name: Upload artifact
+
+        uses: actions/upload-pages-artifact@v3
+
+        with:
+
+          path: dist
+
+  deploy:
+
+    environment:
+
+      name: github-pages
+
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+
+      - name: Deploy
+
+        id: deployment
+
+        uses: actions/deploy-pages@v4
