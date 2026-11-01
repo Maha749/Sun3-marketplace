@@ -1,4 +1,3 @@
-
 name: Deploy Sun3 Marketplace
 
 on:
@@ -49,19 +48,13 @@ jobs:
 
           node-version: 22
 
-          cache: npm
-
       - name: Install dependencies
 
-        run: npm ci
+        run: npm install
 
       - name: Build website
 
         run: npm run build
-
-        env:
-
-          VITE_BASE_PATH: /sun3-marketplace/
 
       - name: Setup Pages
 
