@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createClient } from '@supabase/supabase-js';
 import { ShoppingBag, Search, Store, PackagePlus, ClipboardList, LogIn, LogOut, Leaf, ShieldCheck } from 'lucide-react';
-import './style.css';
+import './src/style.css';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
