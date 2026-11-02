@@ -1,79 +1,611 @@
-name: Deploy Sun3 Marketplace
 
-on:
 
-  push:
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap');
 
-    branches: ["main"]
+:root {
 
-  workflow_dispatch:
+  font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif;
 
-permissions:
+  color: #26332a;
 
-  contents: read
+  background: #fbf8f2;
 
-  pages: write
+  font-synthesis: none;
 
-  id-token: write
+}
 
-concurrency:
+* {
 
-  group: pages
+  box-sizing: border-box;
 
-  cancel-in-progress: false
+}
 
-jobs:
+body {
 
-  build:
+  margin: 0;
 
-    runs-on: ubuntu-latest
+  direction: rtl;
 
-    steps:
+  background: #fbf8f2;
 
-      - name: Checkout
+}
 
-        uses: actions/checkout@v4
+button, input, select, textarea {
 
-      - name: Setup Node
+  font: inherit;
 
-        uses: actions/setup-node@v4
+}
 
-        with:
+button {
 
-          node-version: 20
+  cursor: pointer;
 
-      - name: Install dependencies
+}
 
-        run: npm install
+.header {
 
-      - name: Build project
+  background: white;
 
-        run: npm run build -- --base=/Sun3-marketplace/
+  padding: 18px 6%;
 
-      - name: Upload artifact
+  display: flex;
 
-        uses: actions/upload-pages-artifact@v3
+  align-items: center;
 
-        with:
+  justify-content: space-between;
 
-          path: dist
+  gap: 20px;
 
-  deploy:
+  border-bottom: 1px solid #eee;
 
-    environment:
+  flex-wrap: wrap;
 
-      name: github-pages
+}
 
-      url: ${{ steps.deployment.outputs.page_url }}
+.brand .logo {
 
-    runs-on: ubuntu-latest
+  display: flex;
 
-    needs: build
+  align-items: center;
 
-    steps:
+  gap: 8px;
 
-      - name: Deploy
+  color: #36543d;
 
-        id: deployment
+  font-size: 25px;
 
-        uses: actions/deploy-pages@v4
+  font-weight: 800;
+
+}
+
+.brand small {
+
+  color: #7a837b;
+
+}
+
+nav {
+
+  display: flex;
+
+  gap: 12px;
+
+}
+
+nav button, .categories button {
+
+  background: transparent;
+
+  border: 0;
+
+  padding: 10px 14px;
+
+  color: #36543d;
+
+  border-radius: 20px;
+
+}
+
+nav button:hover, .categories button.active {
+
+  background: #e8eee4;
+
+}
+
+.cart {
+
+  background: #36543d;
+
+  color: white;
+
+  border: 0;
+
+  padding: 12px 18px;
+
+  border-radius: 25px;
+
+}
+
+main {
+
+  max-width: 1150px;
+
+  margin: auto;
+
+  padding: 25px;
+
+}
+
+.hero {
+
+  background: #e8eee4;
+
+  border-radius: 25px;
+
+  padding: 45px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 25px;
+
+  min-height: 280px;
+
+}
+
+.eyebrow, .cat-label {
+
+  color: #6c896d;
+
+  font-size: 13px;
+
+}
+
+.hero h1 {
+
+  font-size: 38px;
+
+  color: #36543d;
+
+  line-height: 1.5;
+
+}
+
+.hero p {
+
+  color: #657066;
+
+  line-height: 1.9;
+
+}
+
+.hero-tags {
+
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+}
+
+.hero-tags span {
+
+  background: white;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+}
+
+.hero-art {
+
+  font-size: 75px;
+
+  text-align: center;
+
+}
+
+.hero-art span {
+
+  font-size: 40px;
+
+}
+
+.notice {
+
+  background: #e8eee4;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  margin: 20px 0;
+
+}
+
+.notice button {
+
+  float: left;
+
+  border: 0;
+
+  background: transparent;
+
+}
+
+.section-head {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 35px;
+
+  flex-wrap: wrap;
+
+}
+
+.search {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: white;
+
+  border: 1px solid #e9e9e9;
+
+  border-radius: 25px;
+
+  padding: 10px 15px;
+
+}
+
+.search input {
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+}
+
+.categories {
+
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+  margin: 20px 0;
+
+}
+
+.grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 20px;
+
+}
+
+.product {
+
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  border: 1px solid #eee;
+
+}
+
+.product-art {
+
+  background: #e8eee4;
+
+  height: 145px;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 65px;
+
+}
+
+.product-info {
+
+  padding: 18px;
+
+}
+
+.product-info h3 {
+
+  margin: 8px 0;
+
+}
+
+.product-info p {
+
+  color: #7a837b;
+
+  font-size: 14px;
+
+}
+
+.product-bottom {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 8px;
+
+}
+
+.product-bottom strong {
+
+  color: #36543d;
+
+}
+
+.product-bottom button, .primary {
+
+  background: #36543d;
+
+  color: white;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  padding: 11px 14px;
+
+}
+
+.panel {
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  margin: 25px 0;
+
+}
+
+.form {
+
+  display: grid;
+
+  gap: 15px;
+
+  margin: 20px 0;
+
+}
+
+.form label {
+
+  display: grid;
+
+  gap: 8px;
+
+}
+
+.form input, .form select, .form textarea {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  background: white;
+
+}
+
+.form textarea {
+
+  min-height: 90px;
+
+}
+
+.auth {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 25px;
+
+}
+
+.secondary {
+
+  background: #e8eee4;
+
+  color: #36543d;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  padding: 12px;
+
+}
+
+.cart-row, .order-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #eee;
+
+  flex-wrap: wrap;
+
+}
+
+.cart-row button {
+
+  border: 0;
+
+  background: #f8e8e5;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+}
+
+.status {
+
+  background: #e8eee4;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+}
+
+.trust {
+
+  display: flex;
+
+  gap: 15px;
+
+  align-items: center;
+
+  background: #e8eee4;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  margin: 30px 0;
+
+}
+
+.trust p {
+
+  color: #657066;
+
+  line-height: 1.8;
+
+}
+
+footer {
+
+  background: #263b2c;
+
+  color: white;
+
+  padding: 25px 6%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+}
+
+footer button {
+
+  background: transparent;
+
+  color: white;
+
+  border: 0;
+
+}
+
+@media (max-width: 600px) {
+
+  .header {
+
+    justify-content: center;
+
+  }
+
+  nav {
+
+    width: 100%;
+
+    justify-content: center;
+
+  }
+
+  main {
+
+    padding: 15px;
+
+  }
+
+  .hero {
+
+    padding: 25px;
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+  .hero h1 {
+
+    font-size: 29px;
+
+  }
+
+  .hero-tags {
+
+    justify-content: center;
+
+  }
+
+  .section-head {
+
+    align-items: stretch;
+
+  }
+
+  .search {
+
+    width: 100%;
+
+  }
+
+}
